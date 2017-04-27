@@ -1,0 +1,16 @@
+body {
+  max-width: 1240px;
+  margin: 0 auto;
+
+}
+
+label {
+  display: block;
+}
+
+button {
+  background: blue;
+  color: white;
+  border-radius: 15px;
+  border: none;
+}
