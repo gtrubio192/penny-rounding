@@ -11,7 +11,6 @@ function moneySplitter(total, count) {
 
   $('.js-array').text('[' + monies + ']');
   $('.js-results').text(confirmedMonies.message + ', ' + confirmedMonies.amount);
-
 }
 
 /**
@@ -49,14 +48,12 @@ function confirmTotal(originalTotal, moniesArray) {
   }
   else if (total.amount > originalTotal) {
     total.message = 'Houston we have a problem: rounded array was higher than expected ';
-
     // If the rounded amount was too high, we subtract
     total.amount = pennyWise(false, moniesArray, parseFloat((total.amount - originalTotal).toFixed(2)*100  ));
   }
   else if (total.amount < originalTotal) {
     total.message = 'Houston we have a problem: rounded array was lower than expected ';
     // If the rounded amount was too low, we add
-    // Last parameter: difference of miscalulation as positive integer
     total.amount = pennyWise(true, moniesArray, parseFloat((originalTotal - total.amount).toFixed(2)*100 ));
   }
   return total;
@@ -67,11 +64,9 @@ function confirmTotal(originalTotal, moniesArray) {
  *
  * @param {boolean} add
  * @param {array} miscalculatedArray
- * @param {float} originalTotal
- * @param {float} misCalculatedTotal
+ * @param {number} difference
  * @returns {array}
  */
-
 function pennyWise(add, miscalculatedArray, difference) {
   let increment = 0.01;
   let misCalculatedTotal = 0;
@@ -95,7 +90,7 @@ function addArray(numbersArray) {
   numbersArray.forEach( element => {
     total += element;
   });
-
+  
   return parseFloat((total).toFixed(2));
 }
 
