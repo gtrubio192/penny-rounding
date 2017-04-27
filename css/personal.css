@@ -14,3 +14,10 @@ button {
   border-radius: 15px;
   border: none;
 }
+
+.results {
+  display: none;
+}
+.results.is-active {
+  display: block;
+}

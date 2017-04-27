@@ -11,6 +11,7 @@ function moneySplitter(total, count) {
 
   $('.js-array').text('[' + monies + ']');
   $('.js-results').text(confirmedMonies.message + ', ' + confirmedMonies.amount);
+  $('.results').addClass('is-active');
 }
 
 /**
@@ -90,7 +91,7 @@ function addArray(numbersArray) {
   numbersArray.forEach( element => {
     total += element;
   });
-  
+
   return parseFloat((total).toFixed(2));
 }
 
